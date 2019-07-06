@@ -1,4 +1,5 @@
 package pl.piotrpawel.biuropodrozy.config;
 
-public class PromotedTrips {
+public enum TripType {
+    BB, HB, FB, AI
 }

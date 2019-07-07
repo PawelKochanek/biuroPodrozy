@@ -16,9 +16,9 @@
   <th>ID</th>
   <th>TRIP</th>
         </tr>
-  <tr th:each="trips,iterationStatus : ${trips}">
+  <tr th:each="trip,iterationStatus : ${trips}">
   <td th:text="${iterationStatus.count}">1</td>
-  <td th:text="${trips}">Name</td>
+  <td th:text="${trip.travelFrom}">Name</td>
         </tr>
       </table>
       </div>>

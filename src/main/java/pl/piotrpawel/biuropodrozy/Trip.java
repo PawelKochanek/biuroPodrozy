@@ -18,10 +18,10 @@ import java.time.LocalDate;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Trip extends BaseEntity{
 
-    @ManyToOne
-    private Country startCountry; // kraj
-    @ManyToOne
-    private Country destinationCountry; // kraj
+//    @ManyToOne
+    private String startCountry; // kraj
+//    @ManyToOne
+    private String destinationCountry; // kraj
     private LocalDate dateTravelFrom; // data wyjazdu
     private LocalDate dateTravelTo; // data powrotu
     private int daysNumber; // ilość dni

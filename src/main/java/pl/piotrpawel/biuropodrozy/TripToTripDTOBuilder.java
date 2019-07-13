@@ -2,7 +2,7 @@ package pl.piotrpawel.biuropodrozy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.piotrpawel.biuropodrozy.repository.CountryRepository;
+//import pl.piotrpawel.biuropodrozy.repository.CountryRepository;
 
 import java.util.Optional;
 
@@ -10,13 +10,13 @@ import java.util.Optional;
 public class TripToTripDTOBuilder {
 
     @Autowired
-    private CountryRepository countryRepository;
+//    private CountryRepository countryRepository;
 
     public TripDTO tripDTO (Trip trip){
         return TripDTO.builder()
                 .id(trip.getId())
-                .countryId(Optional.ofNullable(trip.getStartCountry()).map(x -> x.getId()).orElse(null))
-                .countryId(Optional.ofNullable(trip.getDestinationCountry()).map(x -> x.getId()).orElse(null))
+//                .countryId(Optional.ofNullable(trip.getStartCountry()).map(x -> x.getId()).orElse(null))
+//                .countryId(Optional.ofNullable(trip.getDestinationCountry()).map(x -> x.getId()).orElse(null))
                 .dateTravelFrom(trip.getDateTravelFrom())
                 .dateTravelTo(trip.getDateTravelTo())
                 .daysNumber(trip.getDaysNumber())
@@ -32,8 +32,8 @@ public class TripToTripDTOBuilder {
     public Trip buildEntity(TripDTO dto){
         Trip trip = new Trip();
 
-        trip.setStartCountry(Optional.ofNullable(dto.getCountryId()).map(countryRepository::getOne).orElse(null));
-        trip.setDestinationCountry(Optional.ofNullable(dto.getCountryId()).map(countryRepository::getOne).orElse(null));
+//        trip.setStartCountry(Optional.ofNullable(dto.getCountryId()).map(countryRepository::getOne).orElse(null));
+//        trip.setDestinationCountry(Optional.ofNullable(dto.getCountryId()).map(countryRepository::getOne).orElse(null));
         trip.setDateTravelFrom(dto.getDateTravelFrom());
         trip.setDateTravelTo(dto.getDateTravelTo());
         trip.setDaysNumber(dto.getDaysNumber());

@@ -4,10 +4,7 @@ package pl.piotrpawel.biuropodrozy;
 import lombok.*;
 import pl.piotrpawel.biuropodrozy.config.TripType;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter @Setter
@@ -18,10 +15,10 @@ import java.time.LocalDate;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Trip extends BaseEntity{
 
-//    @ManyToOne
-    private String startCountry; // kraj
-//    @ManyToOne
-    private String destinationCountry; // kraj
+   @ManyToOne (cascade = CascadeType.ALL)
+    private Country startCountry; // kraj
+   @ManyToOne (cascade = CascadeType.ALL)
+    private Country destinationCountry; // kraj
     private LocalDate dateTravelFrom; // data wyjazdu
     private LocalDate dateTravelTo; // data powrotu
     private int daysNumber; // ilość dni

@@ -19,7 +19,7 @@ public class TripService {
 
 
 
-public void addTrip (String startCountryName, String destinationCountryName, LocalDate dateTravelFrom, LocalDate dateTravelTo, int daysNumber,
+public void addTrip (Country startCountryName, Country destinationCountryName, LocalDate dateTravelFrom, LocalDate dateTravelTo, int daysNumber,
          TripType tripType, int howManyAdultsAreTraveling, int howManyChildrenAreTraveling){
 
 
@@ -36,13 +36,28 @@ public void addTrip (String startCountryName, String destinationCountryName, Loc
     tripRepository.save(trip);
 
     }
+
+    public void updateTrip(TripDTO tripDTO) {
+    Trip trip = tripToTripDTOBuilder.buildEntity(tripDTO);
+    tripRepository.save(trip);
+    }
+
+
+
+
+
+
+
+
+
+
     @PostConstruct
     private void mockTrips(){
-addTrip("Germany", "Phiipines", LocalDate.now(), LocalDate.now().plusDays(7), 7,
+addTrip(new Country("Germany"), new Country("Phiipines"), LocalDate.now(), LocalDate.now().plusDays(7), 7,
         TripType.AI, 2, 1 );
-addTrip("Poland", "Dominicana", LocalDate.now(), LocalDate.now().plusDays(8), 8,
+addTrip(new Country ("Poland"), new Country("Dominicana"), LocalDate.now(), LocalDate.now().plusDays(8), 8,
         TripType.AI, 1, 0 );
-addTrip("Russia", "Georgia", LocalDate.now(), LocalDate.now().plusDays(10), 10,
+addTrip(new Country("Russia"), new Country("Georgia"), LocalDate.now(), LocalDate.now().plusDays(10), 10,
         TripType.HB, 3, 0 );
     }
 }

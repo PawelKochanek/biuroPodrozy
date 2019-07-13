@@ -1,7 +1,8 @@
-package pl.piotrpawel.biuropodrozy;
+package pl.piotrpawel.biuropodrozy.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
+import pl.piotrpawel.biuropodrozy.Trip;
 
 import java.util.Optional;
 

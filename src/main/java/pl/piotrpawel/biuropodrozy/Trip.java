@@ -1,10 +1,7 @@
 package pl.piotrpawel.biuropodrozy;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import pl.piotrpawel.biuropodrozy.config.TripType;
 
 import javax.persistence.Entity;
@@ -17,6 +14,7 @@ import java.time.LocalDate;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Trip extends BaseEntity{
 
@@ -33,21 +31,4 @@ public class Trip extends BaseEntity{
     private Boolean isPromoted; // czy wycieczka jest promowana?
     private int howManyAdultsAreTraveling; // ilosc podrozujacych doroslych
     private int howManyChildrenAreTraveling; // ilosc podrozojacych dzieci
-
-    @Override
-    public String toString() {
-        return "Trip{" +
-                "startCountry=" + startCountry +
-                ", destinationCountry=" + destinationCountry +
-                ", dateTravelFrom=" + dateTravelFrom +
-                ", dateTravelTo=" + dateTravelTo +
-                ", daysNumber=" + daysNumber +
-                ", tripType=" + tripType +
-                ", priceForAdult=" + priceForAdult +
-                ", priceForChild=" + priceForChild +
-                ", isPromoted=" + isPromoted +
-                ", howManyAdultsAreTraveling=" + howManyAdultsAreTraveling +
-                ", howManyChildrenAreTraveling=" + howManyChildrenAreTraveling +
-                '}';
-    }
 }

@@ -24,9 +24,9 @@
                 <tr th:each="trip,iterationStatus : ${trips}">
                     <td th:text="${iterationStatus.count}">1</td>
                     <th>Wylot</th>>
-                    <td th:text="${trip.travelFrom + ' '  + trip.dateTravelFrom}"></td>
+                    <td th:text="${trip.startCountry + ' '  + trip.dateTravelFrom}"></td>
                     <th>Ladowanie</th>>
-                    <td th:text="${trip.travelTo}"></td>
+                    <td th:text="${trip.destinationCountry}"></td>
                     <th>Ilość dni z data powrotu</th>>
                     <td th:text="${trip.daysNumber.toString() + ' ' + trip.dateTravelTo}"></td>
                     <th>Ilość doroslych</th>>

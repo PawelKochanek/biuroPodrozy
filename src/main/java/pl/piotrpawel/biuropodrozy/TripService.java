@@ -7,6 +7,8 @@ import pl.piotrpawel.biuropodrozy.repository.TripRepository;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TripService {
@@ -34,7 +36,6 @@ public void addTrip (Country startCountryName, Country destinationCountryName, L
     trip.setHowManyChildrenAreTraveling(howManyChildrenAreTraveling);
     trip.setTripType(tripType);
     tripRepository.save(trip);
-
     }
 
     public void updateTrip(TripDTO tripDTO) {
@@ -42,9 +43,13 @@ public void addTrip (Country startCountryName, Country destinationCountryName, L
     tripRepository.save(trip);
     }
 
+    public Optional<Trip> findById(Long id) {
+        return tripRepository.findCountryById(id);
+    }
 
-
-
+    public List<Trip> findAll() {
+        return tripRepository.findAll();
+    }
 
 
 

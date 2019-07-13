@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public class TripToTripDTOBuilder {
 
-    @Autowired
+ //   @Autowired
 //    private CountryRepository countryRepository;
 
     public TripDTO tripDTO (Trip trip){

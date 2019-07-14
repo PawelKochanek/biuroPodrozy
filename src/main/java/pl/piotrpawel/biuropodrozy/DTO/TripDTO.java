@@ -1,4 +1,4 @@
-package pl.piotrpawel.biuropodrozy;
+package pl.piotrpawel.biuropodrozy.DTO;
 
 import lombok.*;
 import pl.piotrpawel.biuropodrozy.config.TripType;

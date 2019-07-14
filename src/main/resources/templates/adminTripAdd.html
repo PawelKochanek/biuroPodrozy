@@ -11,14 +11,14 @@
     <label for="startcountry">START Country:</label>
     <select autofocus class="form-control" id="startcountry" th:field="*{startCountry}">
         <option th:value="''" th:text="Wybierz"></option>
-        <option th:each="i : ${countries}" th:value="${i.symbol}" th:text="${i}"></option>
+        <option th:each="i : ${countries}" th:value="${i.name}" th:text="${i}"></option>
     </select>
 
 <br>
     <label for="destinationcountry">Destination Country:</label>
     <select autofocus class="form-control" id="destinationcountry" th:field="*{destinationCountry}">
         <option th:value="''" th:text="Wybierz"></option>
-        <option th:each="i : ${countries}" th:value="${i.symbol}" th:text="${i}"></option>
+        <option th:each="i : ${countries}" th:value="${i.name}" th:text="${i}"></option>
     </select>
 
 <br>

@@ -7,6 +7,7 @@ import pl.piotrpawel.biuropodrozy.config.TripType;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Builder
 @Getter @Setter
 @Entity
 @NoArgsConstructor

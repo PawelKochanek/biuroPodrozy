@@ -1,7 +1,11 @@
-package pl.piotrpawel.biuropodrozy;
+package pl.piotrpawel.biuropodrozy.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.piotrpawel.biuropodrozy.Country;
+import pl.piotrpawel.biuropodrozy.Trip;
+import pl.piotrpawel.biuropodrozy.DTO.TripDTO;
+import pl.piotrpawel.biuropodrozy.DTOBulider.TripToTripDTOBuilder;
 import pl.piotrpawel.biuropodrozy.config.TripType;
 import pl.piotrpawel.biuropodrozy.repository.TripRepository;
 
@@ -22,7 +26,7 @@ public class TripService {
 
 
 public void addTrip (Country startCountryName, Country destinationCountryName, LocalDate dateTravelFrom, LocalDate dateTravelTo, int daysNumber,
-         TripType tripType, int howManyAdultsAreTraveling, int howManyChildrenAreTraveling, long priceForChild, long priceForAdult, boolean isPromoted){
+                     TripType tripType, int howManyAdultsAreTraveling, int howManyChildrenAreTraveling, long priceForChild, long priceForAdult, boolean isPromoted){
 
 
     Trip trip = new Trip();

@@ -1,7 +1,10 @@
-package pl.piotrpawel.biuropodrozy;
+package pl.piotrpawel.biuropodrozy.DTOBulider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.piotrpawel.biuropodrozy.Country;
+import pl.piotrpawel.biuropodrozy.DTO.TripDTO;
+import pl.piotrpawel.biuropodrozy.Trip;
 import pl.piotrpawel.biuropodrozy.repository.CountryRepository;
 
 import java.util.Optional;
@@ -9,7 +12,7 @@ import java.util.Optional;
 @Service
 public class TripToTripDTOBuilder {
     @Autowired
-  private CountryRepository countryRepository;
+    private CountryRepository<Country> countryRepository;
 
     public TripDTO tripDTO (Trip trip){
         return TripDTO.builder()
@@ -39,7 +42,7 @@ public class TripToTripDTOBuilder {
         trip.setTripType(dto.getTripType());
         trip.setPriceForAdult(dto.getPriceForAdult());
         trip.setPriceForChild(dto.getPriceForChild());
-        trip.setIsPromoted(dto.getIsPromoted());//????????????????????
+        trip.setIsPromoted(dto.getIsPromoted());
         trip.setHowManyAdultsAreTraveling(dto.getHowManyAdultsAreTraveling());
         trip.setHowManyChildrenAreTraveling(dto.getHowManyChildrenAreTraveling());
         return trip;

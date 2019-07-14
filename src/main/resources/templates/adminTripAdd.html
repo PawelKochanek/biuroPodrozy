@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <title>PANEL DODAWANIA WYCIECZEK</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<form th:action="@{/addtrip}" th:object="${tripFormData}" method="post">
+
+
+    <label for="travelfrom">Travel date FROM:</label>
+    <select autofocus class="form-control" id="travelfrom" th:field="*{travelFrom}">
+        <vaadin-date-picker label="Date" placeholder="Wybor daty">
+        </vaadin-date-picker>
+        <option th:each="i : ${countries}" th:value="${i.symbol}" th:text="${travelFrom}"></option>
+    </select>
+
+
+<!--    <label for="travelto">Travel Date TO:</label>country-->
+<!--    <select autofocus class="form-control" id="travelto">-->
+<!--        <vaadin-date-picker label="Date" placeholder="Wybor daty">-->
+<!--        </vaadin-date-picker>-->
+<!--    </select>-->
+
+
+<!--    <label for="daysnumber">Days number:</label>-->
+<!--    <select autofocus class="form-control" id="daysnumber">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+
+<!--    </select>-->
+
+
+<!--    <label for="triptype">Trip Type:</label>-->
+<!--    <select autofocus class="form-control" id="triptype">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+
+<!--    </select>-->
+
+<!--    <label for="priceforadult">Price for adult:</label>-->
+<!--    <select autofocus class="form-control" id="priceforadult">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+<!--    </select>-->
+
+<!--    <label for="priceforchildren"> Price for children:</label>-->
+<!--    <select autofocus class="form-control" id="priceforchildren">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+
+<!--    </select>-->
+
+
+<!--    <label for="ispromoted">Is trip promoted? </label>-->
+<!--    <select autofocus class="form-control" id="ispromoted">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+
+<!--    </select>-->
+
+
+<!--    <label for="childrennumber">How many children:</label>-->
+<!--    <select autofocus class="form-control" id="childrennumber">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+
+<!--    </select>-->
+
+<!--    <label for="adultsnumber">How many adults:</label>-->
+<!--    <select autofocus class="form-control" id="adultsnumber">-->
+<!--        <option th:value="''" th:text="Wybierz"></option>-->
+
+<!--    </select>-->
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">ADD TRIP</button>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</form>
+
+
+</body>
+</html>

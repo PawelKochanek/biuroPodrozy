@@ -22,7 +22,7 @@ public class TripService {
 
 
 public void addTrip (Country startCountryName, Country destinationCountryName, LocalDate dateTravelFrom, LocalDate dateTravelTo, int daysNumber,
-         TripType tripType, int howManyAdultsAreTraveling, int howManyChildrenAreTraveling){
+         TripType tripType, int howManyAdultsAreTraveling, int howManyChildrenAreTraveling, long priceForChild, long priceForAdult, boolean isPromoted){
 
 
     Trip trip = new Trip();
@@ -35,6 +35,9 @@ public void addTrip (Country startCountryName, Country destinationCountryName, L
     trip.setHowManyAdultsAreTraveling(howManyAdultsAreTraveling);
     trip.setHowManyChildrenAreTraveling(howManyChildrenAreTraveling);
     trip.setTripType(tripType);
+    trip.setPriceForChild(priceForChild);
+    trip.setPriceForAdult(priceForAdult);
+    trip.setIsPromoted(isPromoted);
     tripRepository.save(trip);
     }
 
@@ -59,11 +62,11 @@ public void addTrip (Country startCountryName, Country destinationCountryName, L
     @PostConstruct
     private void mockTrips(){
 addTrip(new Country("Germany"), new Country("Phiipines"), LocalDate.now(), LocalDate.now().plusDays(7), 7,
-        TripType.AI, 2, 1 );
+        TripType.AI, 2, 1, 1000, 2000, false );
 addTrip(new Country ("Poland"), new Country("Dominicana"), LocalDate.now(), LocalDate.now().plusDays(8), 8,
-        TripType.AI, 1, 0 );
+        TripType.AI, 1, 0, 800, 1600, false );
 addTrip(new Country("Russia"), new Country("Georgia"), LocalDate.now(), LocalDate.now().plusDays(10), 10,
-        TripType.HB, 3, 0 );
+        TripType.HB, 3, 0, 500, 1000, true );
     }
 }
 

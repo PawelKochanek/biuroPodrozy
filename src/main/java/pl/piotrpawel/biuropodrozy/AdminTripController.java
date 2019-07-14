@@ -19,7 +19,7 @@ public class AdminTripController {
 
 
     @PostMapping(value = "/addtrip")
-    public String addTrip(@ModelAttribute(name = "tripFormData") @Valid TripRegistrationDTO customerFormData, Model model) {
+    public String adminTripAdd(@ModelAttribute(name = "tripFormData") @Valid TripRegistrationDTO customerFormData, Model model) {
 
 //        tripService.addTrip(startCountryName, destinationCountryName,
 //                dateTravelFrom, dateTravelTo, daysNumber, tripType,
@@ -28,10 +28,11 @@ public class AdminTripController {
         return "redirect:/admin/trips";
     }
 
-    @GetMapping(value = "/trip")
-    public String addTrip(Model model) {
+    @GetMapping(value = "/addtrip")
+    public String adminTripAdd(Model model) {
         model.addAttribute("tripFormData", new TripRegistrationDTO());
         model.addAttribute("countries", Countries.values());
-        return "addTrip";
+        model.addAttribute("triptype", TripType.values());
+        return "adminTripAdd";
     }
 }

@@ -11,6 +11,8 @@ import lombok.Setter;
 @Setter
 public class TripRegistrationDTO {
 
+    private String startCountry;
+    private String destinationCountry;
 //    @Pattern(regexp = "^[\\p{Lu}][\\p{Ll}]{2,}$", message = "Wymagane przynajmniej 3 znaki(pierwsza litera duża, reszta małe).")
     private String travelFrom;
 //    @Pattern(regexp = "^[\\p{Lu}][\\p{Ll}]{2,}(-[\\p{Lu}][\\p{Ll}]{2,})?$", message = "Wymagane przynajmniej 3 znaki(pierwsza litera duża, można podać także nazwisko dwuczłonowe).")

@@ -1,4 +1,4 @@
-package pl.piotrpawel.biuropodrozy;
+package pl.piotrpawel.biuropodrozy.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class User {
+public class UserDTO {
     private String name;
     private String lastname;
     private String email;

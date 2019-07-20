@@ -1,9 +1,11 @@
-package pl.piotrpawel.biuropodrozy;
+package pl.piotrpawel.biuropodrozy.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import pl.piotrpawel.biuropodrozy.LoginUser;
+import pl.piotrpawel.biuropodrozy.User;
 import pl.piotrpawel.biuropodrozy.repository.UserRepository;
 
 import java.util.Optional;

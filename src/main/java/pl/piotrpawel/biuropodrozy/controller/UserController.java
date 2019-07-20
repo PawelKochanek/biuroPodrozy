@@ -15,12 +15,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("register")
+    @GetMapping("/register")
     public ModelAndView register() {
         return new ModelAndView("register");
     }
 
-    @PostMapping("register")
+    @PostMapping("/register")
     public ModelAndView register(@ModelAttribute User user){
         userService.save(user);
         return new ModelAndView("login");

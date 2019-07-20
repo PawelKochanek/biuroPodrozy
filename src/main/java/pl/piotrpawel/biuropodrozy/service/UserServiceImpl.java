@@ -5,7 +5,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.piotrpawel.biuropodrozy.User;
 import pl.piotrpawel.biuropodrozy.repository.UserRepository;
-import pl.piotrpawel.biuropodrozy.service.UserService;
 
 import java.util.Optional;
 
